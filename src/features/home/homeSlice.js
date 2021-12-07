@@ -8,6 +8,11 @@ export const fetchPosts = createAsyncThunk(
     }
 )
 
+export const deletePost = createAsyncThunk('home/deletePost', async (id) => {
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {method: "DELETE"})
+    return id;
+})
+
 const postAdapter = createEntityAdapter({
     selectId: (post) => post.id,
 })
@@ -28,7 +33,17 @@ export const homeSlice = createSlice({
         },
         [fetchPosts.rejected](state) {
             state.loading = false
-        }
+        },
+        [deletePost.rejected](state) {
+            state.loading = false
+        },
+        [deletePost.fulfilled](state, {payload: id}) {
+            state.loading = false
+            postAdapter.removeOne(state, id)
+        },
+        [deletePost.pending](state) {
+            state.loading = true
+        },
     }
 })
 
