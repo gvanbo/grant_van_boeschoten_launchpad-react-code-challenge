@@ -20,7 +20,12 @@ const Home = () => {
   const showAllPosts = allPosts.map((post) => (
     <Post key={post.id} post={post} onDelete={onDelete} onEdit={onEdit} />
   ));
-  return <div className="posts-wrapper">{showAllPosts}</div>;
+  return (
+    <>
+    
+    <div className="posts-wrapper">{showAllPosts}</div>;
+    </>
+  );
 };
 
 export default Home;

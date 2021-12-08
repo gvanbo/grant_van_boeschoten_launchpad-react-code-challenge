@@ -1,22 +1,27 @@
 import React from "react";
-import { Panel, Button, ButtonToolbar, Input } from "rsuite";
+import { Panel, ButtonToolbar } from "rsuite";
+import './post.css'
 
 const Post = ({ post, onDelete, onEdit }) => {
   return (
-    <Panel header={<h3>{post.title}</h3>} bordered style={{ margin: 20 }}>
+    <Panel header={<h1>{post.title}</h1>} bordered style={{ margin: 20 }}>
       {post.body}
-      <ButtonToolbar style={{ marginTop: 10 }}>
-        <Button size="lg" color="red" onClick={() => onDelete(post.id)}>
+      <ButtonToolbar style={{ marginTop: 10 }} className="button_container">
+        <button className="button_red" onClick={() => onDelete(post.id)}>
           Delete
-        </Button>
-        <Button
-          size="lg"
-          color="cyan"
+        </button>
+        <button
+          className="button_black"
           onClick={() => onEdit(post.id, { body: post.body })}
         >
           Edit
-        </Button>
-        <Input placeholder={post.body}></Input>
+        </button>
+        <button
+          className="button_black"
+          onClick={() => onEdit(post.id, { body: post.body })}
+        >
+          New Post
+        </button>
       </ButtonToolbar>
     </Panel>
   );
