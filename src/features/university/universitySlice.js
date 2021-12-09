@@ -4,21 +4,17 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 
-export const fetchPosts = createAsyncThunk(
+export const fetchUniversities = createAsyncThunk(
   "univeresity/fetchPosts",
-  async () => {
+  async (country) => {
     return await fetch(
-      "https://jsonplaceholder.typicode.com/posts?_start=0&_limithttp://universities.hipolabs.com/search?country=Canada=20"
+      `http://universities.hipolabs.com/search?country=canada`
     ).then((res) => res.json());
   }
 );
 
-export const getCountries = createAsyncThunk("home/addPost", async (post) => {
-  await fetch("https://api.first.org/data/v1/countries");
-});
-
 const universityAdapter = createEntityAdapter({
-  selectId: (post) => post.id,
+  selectId: (university) => university.web_pages[0],
 });
 
 export const universitySlice = createSlice({
@@ -26,14 +22,14 @@ export const universitySlice = createSlice({
   initialState: universityAdapter.getInitialState({ loading: false }),
   reducerss: {},
   extraReducers: {
-    [fetchPosts.pending](state) {
+    [fetchUniversities.pending](state) {
       state.loading = true;
     },
-    [fetchPosts.fulfilled](state, { payload }) {
+    [fetchUniversities.fulfilled](state, { payload }) {
       state.loading = false;
       universityAdapter.setAll(state, payload);
     },
-    [fetchPosts.rejected](state) {
+    [fetchUniversities.rejected](state) {
       state.loading = false;
     },
   },
