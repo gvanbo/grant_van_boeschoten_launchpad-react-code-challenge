@@ -4,15 +4,16 @@ import {
     createSlice,
   } from "@reduxjs/toolkit";
 
-  export const selectCountriesList = createAsyncThunk(
-    "university/selectCountriesList",
-    async (post) => {
-      await fetch("https://api.first.org/data/v1/countries");
+  export const fetchCountries = createAsyncThunk(
+    "country/fetchCountries",
+    async (countrySelector) => {
+      await fetch("https://api.first.org/data/v1/countries")
+      .then((res) => res.json());
     }
   );
   
   const countryAdapter = createEntityAdapter({
-    selectId: (post) => post.id,
+    selectId: (countrySelector) => countrySelector.country,
   });
   
   export const countrySlice = createSlice({
@@ -20,13 +21,13 @@ import {
     initialState: countryAdapter.getInitialState({ loading: false }),
     reducerss: {},
     extraReducers: {
-      [selectCountriesList.pending](state) {
+      [fetchCountries.pending](state) {
         state.loading = true;
       },
-      [selectCountriesList.fulfilled](state) {
+      [fetchCountries.fulfilled](state) {
         state.loading = false;
       },
-      [selectCountriesList.rejected](state) {
+      [fetchCountries.rejected](state) {
         state.loading = false;
       },
     },

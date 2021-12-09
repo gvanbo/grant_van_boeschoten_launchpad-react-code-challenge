@@ -4,6 +4,7 @@ import NavBar from "../navbar/NavBar";
 import Header from "../../components/Header"
 import{ fetchUniversities, universitySelectors, } from "./universitySlice";
 import UniversityListItem from "../../components/UniversityListItem"
+import ChooseUniversityByCountry from "../../components/ChooseUniversityByCountry";
 
 const University = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const University = () => {
         <div>
             <NavBar />
             <Header headerText="university" />
+            <ChooseUniversityByCountry />
+
             <div className="row justify-content-center">
                 <div class="col-6">
                     {showSelectedCountry}
