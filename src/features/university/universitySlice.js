@@ -6,9 +6,9 @@ import {
 
 export const fetchUniversities = createAsyncThunk(
   "univeresity/fetchPosts",
-  async (country) => {
+  async (selectCountry = "mexico") => {
     return await fetch(
-      `http://universities.hipolabs.com/search?country=canada`
+      `http://universities.hipolabs.com/search?country=${selectCountry}`
     ).then((res) => res.json());
   }
 );

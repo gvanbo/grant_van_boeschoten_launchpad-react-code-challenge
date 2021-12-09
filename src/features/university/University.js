@@ -1,40 +1,72 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../navbar/NavBar";
-import Header from "../../components/Header"
-import{ fetchUniversities, universitySelectors, } from "./universitySlice";
-import UniversityListItem from "../../components/UniversityListItem"
-import ChooseUniversityByCountry from "../../components/ChooseUniversityByCountry";
+import Header from "../../components/Header";
+import { fetchUniversities, universitySelectors } from "./universitySlice";
+import { countrySelectors, fetchCountries } from "./countrySlice";
+import UniversityListItem from "../../components/UniversityListItem";
+import imageLinks from "../../app/assets/images";
 
 const University = () => {
-    const dispatch = useDispatch();
-    const universityPosts = useSelector(universitySelectors.selectAll);
+  const dispatch = useDispatch();
+  const universityPosts = useSelector(universitySelectors.selectAll);
+  const countryPosts = useSelector(countrySelectors.selectAll);
 
-    useEffect(() => {
-        dispatch(fetchUniversities())
-    }, [])
+  useEffect(() => {
+    dispatch(fetchCountries());
+  }, []);
 
-    const showSelectedCountry = universityPosts.map((university) => <UniversityListItem key={university.id} university={university} /> )
+  const populateCountriesOptions = countryPosts.map((country) => {
+    return <option value={country.country}>{country.country}</option>;
+  });
 
-    const universityImage = "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F607590ba05bd6e626df132b2%2FCheerful-college-students-walking-out-of-campus-together--posing-outdoors%2F960x0.jpg%3Ffit%3Dscale"
-    
-    return(
-        
-        <div>
-            <NavBar />
-            <Header headerText="university" />
-            <ChooseUniversityByCountry />
+  const handleSelect = (e) => {
+    const country = e.target.value;
+    dispatch(fetchUniversities(country));
+  };
 
-            <div className="row justify-content-center">
-                <div class="col-6">
-                    {showSelectedCountry}
-                </div>
-                <div className="col-6">
-                    <img src={universityImage} alt="Diverse University Students" width="80%"/>
-                </div>
-            </div>
+  const showSelectedCountry = universityPosts.map((university) => (
+    <UniversityListItem key={university.id} university={university} />
+  ));
+
+  return (
+    <div>
+      <NavBar />
+      <Header headerText="university" />
+      <div>
+        <div className="row justify-content-md-center mb-3">
+          <h3 className="col-5">Search Universities by Country</h3>
+          <div className="col-5">
+            <select
+              class="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              onChange={handleSelect}
+            >
+              {populateCountriesOptions}
+              <option value="Canada">Choose Country</option>
+              <option value="Canada">Canada</option>
+              <option value="Rwanda">Rawanda</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Japan">Japan</option>
+              <option value="Singapore">Singapore</option>
+            </select>
+          </div>
         </div>
-        )
-}
+      </div>
+
+      <div className="row justify-content-center">
+        <div className="col-6">{showSelectedCountry}</div>
+        <div className="col-6 justify-self-center">
+          <img src={imageLinks[1].link} alt={imageLinks[1].text} width="90%" />
+          <img src={imageLinks[3].link} alt={imageLinks[3].text} width="90%" />
+          <img src={imageLinks[2].link} alt={imageLinks[2].text} width="90%" />
+          <img src={imageLinks[4].link} alt={imageLinks[4].text} width="90%" />
+          <img src={imageLinks[5].link} alt={imageLinks[5].text} width="90%" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default University;
