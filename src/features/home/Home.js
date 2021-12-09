@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts, homeSelectors, deletePost, editPost } from "./homeSlice";
 import Post from "../../components/Post";
+import { Outlet } from "react-router";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Home = () => {
     <>
     
     <div className="posts-wrapper">{showAllPosts}</div>;
+    <Outlet />
     </>
   );
 };
