@@ -1,5 +1,14 @@
+import NavBar from "../navbar/NavBar"
+import Header from "../../components/Header"
+
+
 const PostalLookup = () => {
-    return(<div>Postal Lookup</div>)
+    return(
+        <>
+            <NavBar />
+            <Header headerText="postal lookup" />
+        </>
+        )
 }
 
 export default PostalLookup

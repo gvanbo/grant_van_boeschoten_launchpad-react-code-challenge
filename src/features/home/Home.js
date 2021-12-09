@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts, homeSelectors, deletePost, editPost } from "./homeSlice";
 import Post from "../../components/Post";
 import { Outlet } from "react-router";
+import Header from "../../components/Header"
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,8 +24,8 @@ const Home = () => {
   ));
   return (
     <>
-    
-    <div className="posts-wrapper">{showAllPosts}</div>;
+    <Header headerText="home" />
+    <div className="container">{showAllPosts}</div>;
     <Outlet />
     </>
   );

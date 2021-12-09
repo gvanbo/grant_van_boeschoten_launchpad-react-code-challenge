@@ -5,26 +5,26 @@ body {
   
   font-family: 'Proza Libre', sans-serif;
   font-size: medium;
-  color: antiquewhite;
+  color: whitesmoke;
   align-items: center;
 }
 
 h1, h2, h3 {
   font-family: 'IBM Plex Serif', serif;
   font-weight: bold;
-  color: antiquewhite;
+  color: whitesmoke;
 }
 
 h1 {
-  font-size: larger;
+  font-size: 6rem;
 }
 
 h2 {
-  font-size: large;
+  font-size: 4rem;
 }
 
 h3 {
-  font-size: medium;
+  font-size: 2rem;
 }
 
 
@@ -37,9 +37,10 @@ h3 {
    transition: 0.5s;
    background-size: 200% auto;
    color: white;            
-   box-shadow: 0 0 20px #eee;
+   box-shadow: 0 0 5px #eee;
    border-radius: 10px;
    display: block;
+   font-size: 1rem;
  }
 
  .button_black:hover {
