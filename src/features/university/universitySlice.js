@@ -36,7 +36,7 @@ export const universitySlice = createSlice({
 });
 
 export const universitySelectors = universityAdapter.getSelectors(
-  (state) => state.home
+  (state) => state.university 
 );
 
 export default universitySlice.reducer;

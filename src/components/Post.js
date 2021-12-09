@@ -3,9 +3,8 @@ import CallModal from "./CallModal";
 import "./post.css";
 
 const Post = ({ post, onDelete, onEdit }) => {
-  console.log("Post Component");
   return (
-    <div className="card bg-transparent" style={{ width: "100%", margin: 15 }}>
+    <div className="card bg-transparent" style={{ margin: 15, border: "solid" }}>
       <div className="card-body">
         <h3 className="card-subtitle mb-2 text-capitalize">{post.title}</h3>
         <p className="card-text">{post.body}</p>

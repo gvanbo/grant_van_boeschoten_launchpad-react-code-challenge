@@ -33,7 +33,7 @@ import {
   });
   
   export const countrySelectors = countryAdapter.getSelectors(
-    (state) => state.home
+    (state) => state.country
   );
   
   export default countrySlice.reducer;
