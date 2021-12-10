@@ -8,21 +8,8 @@ img {
     border-radius: 0;
 }
 
-h1 {
-    line-height: 6.2rem;
-}
-
 h3 {
     text-transform: uppercase;
 }
 
-.label {
-    font-family: 'Proza Libre', sans-serif;
-    font-size: 1.5rem;
-    color: whitesmoke;
-    text-transform: uppercase;
-}
 
-.postal-input {
-    color: black
-}
