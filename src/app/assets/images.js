@@ -22,7 +22,15 @@ const imageLinks = {
     6: {
         link: "https://www.imf.org/-/media/Images/IMF/Countries/detail-page/USA/united-states.ashx?h=280&w=1099&la=en",
         text: "New York City Skyline"
-    }
+    },
+    7: {
+        link: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_494581822_130796.jpg",
+        text: "A happy lady"
+    },
+    8: {
+        link: "https://the-happy-manager.com/wp-content/uploads/bigstock-Portrait-Of-Smiling-Employees-272904928-min-scaled.jpg",
+        text: "Five happy business people"
+    },
 
 }
 

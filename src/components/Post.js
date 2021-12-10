@@ -2,7 +2,7 @@ import React from "react";
 import CallModal from "./CallModal";
 import "./post.css";
 
-const Post = ({ post, onDelete, onEdit }) => {
+const Post = ({ post, onDelete, onEdit, onPost }) => {
   return (
     <div className="card bg-transparent" style={{ margin: 15, border: "solid" }}>
       <div className="card-body">
@@ -19,7 +19,7 @@ const Post = ({ post, onDelete, onEdit }) => {
           </button>
           <button
             className="button_black"
-            onClick={() => onEdit(post.id, { body: post.body })}
+            onClick={() => onPost({title: "Hey Title", body: "Hey Body"})}
           >
             New Post
           </button>
