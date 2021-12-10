@@ -35,6 +35,14 @@ h3 {
   font-size: 2rem;
 }
 
+img {
+  margin: 15px;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid whitesmoke;
+  border-radius: 5px;
+}
+
 
 .button_black {background-image: linear-gradient(to right, #485563 0%, #29323c  51%, #485563  100%)}
 .button_black {
