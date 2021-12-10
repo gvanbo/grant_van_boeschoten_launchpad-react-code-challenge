@@ -11,15 +11,19 @@ const Home = () => {
   const allPosts = useSelector(homeSelectors.selectAll);
   const onDelete = useCallback((id) => {
     dispatch(deletePost(id));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const onEdit = useCallback(
     (id, newObj) => dispatch(editPost({ id, newObj })),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   const onPost = useCallback((title, body) => dispatch(addPost({ title, body})), []);
 
   useEffect(() => {
     dispatch(fetchPosts());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const showAllPosts = allPosts.map((post) => (
     <Post key={post.id} post={post} onDelete={onDelete} onEdit={onEdit} onPost={onPost} />

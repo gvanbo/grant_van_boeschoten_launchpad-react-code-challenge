@@ -34,6 +34,10 @@ const imageLinks = {
     9: {
         link: "https://catholicconvert.files.wordpress.com/2009/04/book-banner-4.jpg",
         text: "Old rustic books"
+    },
+    10: {
+        link: "https://forestry.ubc.ca/wp-content/uploads/2020/05/Vancouver-Summer-Program-banner.jpg",
+        text: "Birds eye view of the University of Brittish Columbia"
     }
 
 }

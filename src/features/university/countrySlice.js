@@ -7,7 +7,9 @@ import {
   export const fetchCountries = createAsyncThunk(
     "country/fetchCountries",
     async () => {
-      return await fetch("https://api.first.org/data/v1/countries")
+      return await fetch("https://api.first.org/data/v1/countries", {
+        headers: {'Content-type': 'application/json; charset=UTF-8',}
+      })
       .then((res) => res.json());
     }
   );
