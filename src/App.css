@@ -25,14 +25,17 @@ a:hover {
 
 h1 {
   font-size: 6rem;
+  line-height: 6.3rem;
 }
 
 h2 {
   font-size: 4rem;
+  line-height: 4.2rem;
 }
 
 h3 {
   font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 img {
