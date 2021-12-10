@@ -5,7 +5,7 @@ const NavBar = ({ isActive }) => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand" >
-          VOG by Grant
+          LaunchCode by Grant
         </Link>
         <button
           className="navbar-toggler"

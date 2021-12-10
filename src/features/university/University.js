@@ -38,7 +38,7 @@ const University = () => {
           <h3 className="col-5">Search Universities by Country</h3>
           <div className="col-5">
             <select
-              class="form-select form-select-lg mb-3"
+              className="form-select form-select-lg mb-3"
               aria-label=".form-select-lg example"
               onChange={handleSelect}
             >
