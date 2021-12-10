@@ -18,6 +18,10 @@ const imageLinks = {
     5: {
         link: "https://www.uopeople.edu/wp-content/uploads/2021/10/iStock-476815779-Copy@2x.jpg",
         text: "Students graduate from their university program"
+    },
+    6: {
+        link: "https://www.imf.org/-/media/Images/IMF/Countries/detail-page/USA/united-states.ashx?h=280&w=1099&la=en",
+        text: "New York City Skyline"
     }
 
 }

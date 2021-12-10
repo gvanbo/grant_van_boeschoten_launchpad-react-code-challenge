@@ -1,3 +1,22 @@
-label {
-    font-family: ;
+img {
+
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+.label {
+    font-family: 'Proza Libre', sans-serif;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.postal-input {
+    color: black
 }
