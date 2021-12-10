@@ -1,3 +1,19 @@
+Thank you for taking a look at my work! 
+
+There are two requirements that I was unable to completely satisfy:
+1. I could not find a good way to use modals in React.  I implemented a switch statement instead for editing and creating posts.
+2. I recieved an error for my api request to populate the options selector by country for the universities page.  It was wary of 
+my header and there is a chance that anyone who downloads the code will get the same error, as the callback for that api is stil
+operational.
+
+This is my first foray into thunk, and I am glad for the oppertunity to learn about the async features and entitity creates.
+React Tool Kit has some fantastic tools for state management and CRUD operations as well.
+
+Thank you, please send any feedback that you might have.
+
+Grant van Boeschoten
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
