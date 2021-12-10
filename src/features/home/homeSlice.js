@@ -33,12 +33,17 @@ export const addPost = createAsyncThunk("home/addPost", async (title, body) => {
 
 export const editPost = createAsyncThunk(
   "home/editPost",
-  async ({ id, newObj }) => {
+  async ({ id, title, body }) => {
     await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: "PUT",
-      body: JSON.stringify(newObj),
+      body: JSON.stringify({
+        id: id,
+        title: title,
+        body: body,
+        userId: 1
+      }),
     });
-    return { id, changes: newObj };
+    return { id, changes: title, body };
   }
 );
 

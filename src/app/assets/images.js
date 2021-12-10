@@ -31,6 +31,10 @@ const imageLinks = {
         link: "https://the-happy-manager.com/wp-content/uploads/bigstock-Portrait-Of-Smiling-Employees-272904928-min-scaled.jpg",
         text: "Five happy business people"
     },
+    9: {
+        link: "https://catholicconvert.files.wordpress.com/2009/04/book-banner-4.jpg",
+        text: "Old rustic books"
+    }
 
 }
 

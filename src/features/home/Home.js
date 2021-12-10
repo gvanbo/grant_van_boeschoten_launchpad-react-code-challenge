@@ -25,41 +25,14 @@ const Home = () => {
     <Post key={post.id} post={post} onDelete={onDelete} onEdit={onEdit} onPost={onPost} />
   ));
 
-  const showImages = (
-    <div
-      id="carouselExampleSlidesOnly"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src={imageLinks[7].link}
-            className="d-block w-100"
-            alt={imageLinks[7].text}
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src={imageLinks[8].link}
-            className="d-block w-100"
-            alt={imageLinks[8].text}
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src={imageLinks[7].link}
-            className="d-block w-100"
-            alt={imageLinks[7].text}
-          />
-        </div>
-      </div>
-    </div>
-  );
+  
   return (
     <>
       <Header headerText="home" />
-      {showImages}
+      <div className="m-3" >
+        <img src={imageLinks[9].link} alt={imageLinks[9].text} />
+      </div>
+      <h2 className="text-center m-5">Did somebody say API Posts?</h2>
       <div className="container">{showAllPosts}</div>;
       <Outlet />
     </>

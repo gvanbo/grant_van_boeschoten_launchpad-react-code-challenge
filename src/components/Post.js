@@ -1,9 +1,11 @@
-import React from "react";
-import CallModal from "./CallModal";
+import React, {useState} from "react";
 import "./post.css";
+import AddModal from './AddModal'
+import EditModal from './EditModal'
 
 const Post = ({ post, onDelete, onEdit, onPost }) => {
-  return (
+  const [chooseRender, setChooseRender] = useState(0);
+  const postItem = (
     <div className="card bg-transparent" style={{ margin: 15, border: "solid" }}>
       <div className="card-body">
         <h3 className="card-subtitle mb-2 text-capitalize">{post.title}</h3>
@@ -13,13 +15,15 @@ const Post = ({ post, onDelete, onEdit, onPost }) => {
           <button
             className="button_black"
             // onClick={() => onEdit(post.id, { body: post.body })}
-            onClick={() => <CallModal post={post} isEdit={true} />}
+            //chooseRender 2 will open Edit Modal
+            onClick={() => setChooseRender(2)}
           >
             Edit
           </button>
           <button
             className="button_black"
-            onClick={() => onPost({title: "Hey Title", body: "Hey Body"})}
+            //chooseRender 1 will open Add Modal
+            onClick={() => setChooseRender(1) }
           >
             New Post
           </button>
@@ -30,6 +34,23 @@ const Post = ({ post, onDelete, onEdit, onPost }) => {
       </div>
     </div>
   );
+
+  switch (chooseRender) {
+    case 1:
+      return (
+        <div>
+          <AddModal onPost={onPost}/>
+        </div>
+      )
+    case 2:
+      return (
+        <div>
+          <EditModal onEdit={onEdit} post={post}/>
+        </div>
+      )
+    default:
+        return <div>{postItem}</div>
+  }
 };
 
 export default Post;
