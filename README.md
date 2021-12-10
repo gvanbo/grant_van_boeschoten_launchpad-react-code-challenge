@@ -9,6 +9,8 @@ operational.
 This is my first foray into thunk, and I am glad for the oppertunity to learn about the async features and entitity creates.
 React Tool Kit has some fantastic tools for state management and CRUD operations as well.
 
+I did create tags in my git using the -a -m approach.  Please contact me if you have any difficulties finding the tags.
+
 Thank you, please send any feedback that you might have.
 
 Grant van Boeschoten
