@@ -17,18 +17,33 @@ export const deletePost = createAsyncThunk("home/deletePost", async (id) => {
   return id;
 });
 
-export const addPost = createAsyncThunk("home/addPost", async (post) => {
-  await fetch("https://jsonplaceholder.typicode.com/posts", { method: "POST" });
+export const addPost = createAsyncThunk("home/addPost", async (title, body) => {
+  await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      title: title,
+      body: body,
+      userId: 101,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    }
+  });
 });
 
 export const editPost = createAsyncThunk(
   "home/editPost",
-  async ({ id, newObj }) => {
+  async ({ id, title, body }) => {
     await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
       method: "PUT",
-      body: JSON.stringify(newObj),
+      body: JSON.stringify({
+        id: id,
+        title: title,
+        body: body,
+        userId: 1
+      }),
     });
-    return { id, changes: newObj };
+    return { id, changes: title, body };
   }
 );
 
@@ -69,7 +84,7 @@ export const homeSlice = createSlice({
       });
     },
     [editPost.pending](state) {
-        state.loading = true;
+      state.loading = true;
     },
   },
 });

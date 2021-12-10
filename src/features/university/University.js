@@ -7,6 +7,7 @@ import { countrySelectors, fetchCountries } from "./countrySlice";
 import UniversityListItem from "../../components/UniversityListItem";
 import imageLinks from "../../app/assets/images";
 
+
 const University = () => {
   const dispatch = useDispatch();
   const universityPosts = useSelector(universitySelectors.selectAll);
@@ -14,6 +15,7 @@ const University = () => {
 
   useEffect(() => {
     dispatch(fetchCountries());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const populateCountriesOptions = countryPosts.map((country) => {
@@ -33,6 +35,9 @@ const University = () => {
     <div>
       <NavBar />
       <Header headerText="university" />
+      <div className="m-3">
+        <img src={imageLinks[10].link} alt={imageLinks[10].text} />
+      </div>
       <div>
         <div className="row justify-content-md-center mb-3">
           <h3 className="col-5">Search Universities by Country</h3>
@@ -57,13 +62,6 @@ const University = () => {
 
       <div className="row justify-content-center">
         <div className="col-6">{showSelectedCountry}</div>
-        <div className="col-6 justify-self-center">
-          <img src={imageLinks[1].link} alt={imageLinks[1].text} width="90%" />
-          <img src={imageLinks[3].link} alt={imageLinks[3].text} width="90%" />
-          <img src={imageLinks[2].link} alt={imageLinks[2].text} width="90%" />
-          <img src={imageLinks[4].link} alt={imageLinks[4].text} width="90%" />
-          <img src={imageLinks[5].link} alt={imageLinks[5].text} width="90%" />
-        </div>
       </div>
     </div>
   );
